@@ -38,7 +38,7 @@ function convertStatusFileToArray(statusContent) {
 }
 
 function cleanDependsLine(line) {
-    const lineWithoutParentheses = line.replace('|',',').replace(/ *\([^)]*\) */g, "");
+    const lineWithoutParentheses = line.replace(/\|/g,',').replace(/ *\([^)]*\) */g, "");
     return [...new Set(lineWithoutParentheses.split(',').map(packageName => packageName.trim()))];
 }
 
