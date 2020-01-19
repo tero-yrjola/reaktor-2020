@@ -18,8 +18,10 @@ function convertStatusFileToArray(statusContent) {
             )
         );
 
-    const arrayOfPackageObjects = packagesWithFilteredLines.map(packageArray => {
-        const packageLineObject = {};
+    const arrayOfPackageObjects = packagesWithFilteredLines.map((packageArray, index) => {
+        const packageLineObject = {
+            id: index
+        };
         packageArray.forEach(packageLine => {
             const separatorIndex = packageLine.indexOf(keyValueSeparator);
             const key = packageLine.substring(0, separatorIndex);

@@ -1,0 +1,22 @@
+#package-list-container {
+    background-color: #00263A;
+    overflow-y: scroll;
+    max-height: 80vh;
+    min-width: 200px;
+    margin: 100px 0 0 100px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px grey;
+    cursor: pointer;
+}
+
+.package-list-item {
+    padding: 5px;
+    text-align: center;
+    color: #FF7769;
+    font-weight: bold;
+}
+
+.package-list-item:hover {
+    color: #FF5544;
+}

@@ -1,0 +1,27 @@
+#package-information-container {
+    margin-left: 10%;
+    min-width: 200px;
+}
+
+.dependency-link {
+    background-color: #00263A;
+    color: #FF7769;
+    border-radius: 5px;
+    margin: 5px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dependency-link:hover {
+    color: #FF5544;
+}
+
+.not-clickable {
+    cursor: default;
+    background-color: white;
+    color: black;
+}
+
+.not-clickable:hover {
+    color: black;
+}
