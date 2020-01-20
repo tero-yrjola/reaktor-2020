@@ -23,7 +23,7 @@ function PackageInformation({packages, setSelectedPackageId, selectedPackageId})
 
     return (
         <div id="package-information-container">
-            <h1>{selectedPackage.Package}</h1>
+            <h1>{selectedPackage.Package || "Loading..."}</h1>
             <p>{selectedPackage.Description}</p>
             <p>{selectedPackage.FullDescription}</p>
             {dependencies &&
