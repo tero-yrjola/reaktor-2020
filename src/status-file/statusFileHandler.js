@@ -8,17 +8,17 @@ export function readDefaultStatusFile() {
 
 function convertStatusFileToArray(statusContent) {
     const keyValueSeparator = ':';
-    const commentStartString = ' ';
+    const commentStartRegex = /^ [A-Za-z]/;
     const dependsKey = 'Depends';
-    const fullDescriptionKey = 'FullDescription';
     const linesToKeep = ['Package', 'Description', dependsKey];
+    const fullDescriptionKey = 'FullDescription';
 
     const packageStrings = statusContent.split('\n\n');
     const packagesWithFilteredLines = packageStrings
         .map(packageString => packageString.split('\n')
             .filter(packageLineString =>
                 linesToKeep.some(lineToKeep => packageLineString.startsWith(lineToKeep)
-                                 || packageLineString.startsWith(commentStartString))
+                                 || commentStartRegex.test(packageLineString))
             )
         );
 
@@ -33,7 +33,11 @@ function convertStatusFileToArray(statusContent) {
             if (key === dependsKey)
                 packageLineObject[key] = cleanDependsLine(value);
             else if (!key) {
-                packageLineObject[fullDescriptionKey] += value + " ";
+                packageLineObject[fullDescriptionKey] =
+                    packageLineObject[fullDescriptionKey]
+                        ? packageLineObject[fullDescriptionKey] + value + " "
+                        : value
+
             }
             else
                 packageLineObject[key] = value
