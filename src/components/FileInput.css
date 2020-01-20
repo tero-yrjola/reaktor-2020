@@ -1,0 +1,31 @@
+#file-input {
+    margin: 30px 0 0 100px;
+    position: absolute;
+}
+
+#hidden-files-button {
+    visibility: hidden;
+}
+
+#file-input-button {
+    padding: 10px;
+    background-color: #00263A;
+    color: #FF5544;
+    font-weight: bolder;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    box-shadow: 10px 10px 5px grey;
+}
+
+#file-input-button:hover {
+    color: #FF7769;
+}
+
+#file-input-button:active {
+    position: relative;
+    top: 2px;
+    left: 2px;
+    box-shadow: 8px 8px 5px grey;
+}

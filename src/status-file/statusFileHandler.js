@@ -6,7 +6,16 @@ export function readDefaultStatusFile() {
         .then(text => convertStatusFileToArray(text))
 }
 
+
+export function readCustomStatusFile(statusFile) {
+    return statusFile.text()
+        .then(text => convertStatusFileToArray(text))
+}
+
 function convertStatusFileToArray(statusContent) {
+    if (!statusContent.includes('Package'))
+        return null;
+    
     const keyValueSeparator = ':';
     const commentStartRegex = /^ [A-Za-z]/;
     const dependsKey = 'Depends';
