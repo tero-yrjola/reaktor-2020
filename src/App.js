@@ -30,8 +30,10 @@ function App() {
 
     return (
         <div id="app">
-            <FileInput customFile={customStatusFile} setCustomFile={setCustomStatusFile}/>
-            <PackageList packages={packages} setSelectedPackageId={setSelectedPackageId}/>
+            <div>
+                <FileInput customFile={customStatusFile} setCustomFile={setCustomStatusFile}/>
+                <PackageList packages={packages} setSelectedPackageId={setSelectedPackageId}/>
+            </div>
             <PackageInformation packages={packages}
                                 setSelectedPackageId={setSelectedPackageId}
                                 selectedPackageId={selectedPackageId}

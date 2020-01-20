@@ -1,5 +1,5 @@
 #package-list-container {
-    margin: 100px 0 0 100px;
+    margin: 20px 0 0 100px;
 }
 
 #package-search {
@@ -30,7 +30,6 @@
 }
 
 #package-list {
-    z-index: 1;
     background-color: #00263A;
     overflow-y: scroll;
     height: 80vh;
