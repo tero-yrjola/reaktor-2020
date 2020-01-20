@@ -18,8 +18,7 @@ function PackageList({packages, setSelectedPackageId}) {
 PackageList.propTypes = {
     packages: PropTypes.arrayOf(PropTypes.shape({
         Package: PropTypes.string.isRequired,
-        Description: PropTypes.string.isRequired,
-        Depends: PropTypes.arrayOf(PropTypes.string)
+        id: PropTypes.number.isRequired,
     })).isRequired,
     setSelectedPackageId: PropTypes.func.isRequired,
 };

@@ -21,11 +21,11 @@ function PackageInformation({packages, setSelectedPackageId, selectedPackageId})
             return correspondingPackage;
         });
 
-    console.log(dependencies)
     return (
         <div id="package-information-container">
             <h1>{selectedPackage.Package}</h1>
             <p>{selectedPackage.Description}</p>
+            <p>{selectedPackage.FullDescription}</p>
             {dependencies &&
             dependencies.length > 0
                 ? <p>Dependencies: {dependencies.map(dependency =>
@@ -57,8 +57,9 @@ function PackageInformation({packages, setSelectedPackageId, selectedPackageId})
 
 PackageInformation.propTypes = {
     packages: PropTypes.arrayOf(PropTypes.shape({
-        Package: PropTypes.string,
-        Description: PropTypes.string,
+        Package: PropTypes.string.isRequired,
+        Description: PropTypes.string.isRequired,
+        FullDescription: PropTypes.string,
         Depends: PropTypes.arrayOf(PropTypes.string)
     })).isRequired,
     setSelectedPackageId: PropTypes.func.isRequired,
