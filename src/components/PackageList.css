@@ -1,9 +1,39 @@
 #package-list-container {
+    margin: 100px 0 0 100px;
+}
+
+#package-search {
+    width: 90%;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #E7E8E8;
+    box-shadow: 10px 1px 5px grey;
+}
+
+#clear-button {
+    margin-left: 3px;
+    color: #FF5544;
+    font-weight: bolder;
+    padding: 0 6px;
+    background-color: #00263A;
+    border-radius: 10px;
+    text-align: end;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    box-shadow: 10px 10px 5px grey;
+}
+
+#clear-button:active {
+    background-color: #FF7769;
+}
+
+#package-list {
+    z-index: 1;
     background-color: #00263A;
     overflow-y: scroll;
-    max-height: 80vh;
+    height: 80vh;
     min-width: 300px;
-    margin: 100px 0 0 100px;
     border: 1px solid grey;
     border-radius: 5px;
     box-shadow: 10px 10px 5px grey;
