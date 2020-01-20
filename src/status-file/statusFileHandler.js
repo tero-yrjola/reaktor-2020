@@ -33,7 +33,7 @@ function convertStatusFileToArray(statusContent) {
 
     const arrayOfPackageObjects = packagesWithFilteredLines.map((packageArray, index) => {
         const packageLineObject = {
-            id: index+1
+            id: index+1,
         };
         packageArray.forEach(packageLine => {
             const separatorIndex = packageLine.indexOf(keyValueSeparator);
@@ -52,7 +52,7 @@ function convertStatusFileToArray(statusContent) {
                 packageLineObject[key] = value
         });
         return packageLineObject
-    });
+    }).filter(p => p.Package);
 
     return arrayOfPackageObjects.sort(comparePackageName)
 }
