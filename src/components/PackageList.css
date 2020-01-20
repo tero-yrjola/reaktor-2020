@@ -4,24 +4,25 @@
 
 #package-search {
     width: 90%;
+    margin-bottom: 5px;
     text-align: center;
     border-radius: 5px;
     background-color: #E7E8E8;
-    box-shadow: 10px 1px 5px grey;
+    box-shadow: 10px 5px 5px grey;
 }
 
 #clear-button {
-    margin-left: 3px;
+    margin-bottom: 5px;
     color: #FF5544;
     font-weight: bolder;
-    padding: 0 6px;
+    padding: 1px 6px;
     background-color: #00263A;
     border-radius: 10px;
     text-align: end;
     cursor: pointer;
     -webkit-user-select: none;
     user-select: none;
-    box-shadow: 10px 10px 5px grey;
+    box-shadow: 10px 5px 5px grey;
 }
 
 #clear-button:active {

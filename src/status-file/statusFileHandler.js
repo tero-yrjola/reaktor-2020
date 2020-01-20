@@ -15,7 +15,7 @@ export function readCustomStatusFile(statusFile) {
 function convertStatusFileToArray(statusContent) {
     if (!statusContent.includes('Package'))
         return null;
-    
+
     const keyValueSeparator = ':';
     const commentStartRegex = /^ [A-Za-z]/;
     const dependsKey = 'Depends';
@@ -33,7 +33,7 @@ function convertStatusFileToArray(statusContent) {
 
     const arrayOfPackageObjects = packagesWithFilteredLines.map((packageArray, index) => {
         const packageLineObject = {
-            id: index
+            id: index+1
         };
         packageArray.forEach(packageLine => {
             const separatorIndex = packageLine.indexOf(keyValueSeparator);
@@ -63,5 +63,5 @@ function cleanDependsLine(line) {
 }
 
 function comparePackageName(a, b) {
-    return a.Package && a.Package.toLowerCase() < b.Package && b.Package.toLowerCase ? -1 : 0
+    return b.Package.toLowerCase() < a.Package.toLowerCase()  ? 1 : -1;
 }
