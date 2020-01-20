@@ -13,7 +13,7 @@ export function readCustomStatusFile(statusFile) {
 }
 
 function convertStatusFileToArray(statusContent) {
-    if (!statusContent.includes('Package'))
+    if (!statusContent.startsWith('Package:'))
         return null;
 
     const keyValueSeparator = ':';
