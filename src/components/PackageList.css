@@ -26,11 +26,14 @@
     box-shadow: 10px 5px 5px grey;
 }
 
+#clear-button:hover {
+    color: #FF7769;
+}
+
 #clear-button:active {
-    box-shadow: 8px 3px 5px grey;
+    box-shadow: 8px 3px 4px grey;
     top: 2px;
     left: 2px;
-    background-color: #FF7769;
 }
 
 #package-list {
