@@ -32,7 +32,10 @@ function App() {
         <div id="app">
             <div>
                 <FileInput customFile={customStatusFile} setCustomFile={setCustomStatusFile}/>
-                <PackageList packages={packages} setSelectedPackageId={setSelectedPackageId}/>
+                <PackageList
+                    packages={packages}
+                    setSelectedPackageId={setSelectedPackageId}
+                    selectedPackageId={selectedPackageId}/>
             </div>
             <PackageInformation packages={packages}
                                 setSelectedPackageId={setSelectedPackageId}
